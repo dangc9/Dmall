@@ -1,5 +1,10 @@
 # danmall
 
+## Anounce
+vuejs for a danmall which like as jd.mall
+
+by vue cli2 + thinkphp6
+
 ## Project setup
 ```
 npm install
