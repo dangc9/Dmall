@@ -3,7 +3,7 @@
 ## Anounce
 vuejs for a danmall which like as jd.mall
 
-by vue cli2 + thinkphp6
+by vue cli3 + thinkphp6
 
 ## Project setup
 ```
