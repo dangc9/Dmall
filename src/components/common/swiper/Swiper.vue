@@ -168,7 +168,7 @@
         let currentMove = Math.abs(this.distance);
 
         // 2.判断最终的距离
-        if (this.distance === 0) {
+        if (this.distance === 0) {  
           return
         } else if (this.distance > 0 && currentMove > this.totalWidth * this.moveRatio) { // 右边移动超过0.5
           this.currentIndex--

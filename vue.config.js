@@ -3,11 +3,9 @@ module.exports = {
     resolve: {
       alias: {
         'assets': '@/assets',
-        'common': '@/common',
-        'compoments' : '@/compoments',
-        'network': '@/network',
-        'views': '@/views',
       }
-    }
-  }
+    } 
+  },
+  assetsDir: '',
+  publicPath:'./'
 }

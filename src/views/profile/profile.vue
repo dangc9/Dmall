@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>我是档案</h2>
+    <h2>我是登录信息</h2>
   </div>
 </template>
 

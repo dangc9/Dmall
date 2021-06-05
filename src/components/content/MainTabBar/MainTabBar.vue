@@ -3,7 +3,7 @@
     <tab-Bar>
         <tab-bar-item path="/home"> 
           <template v-slot:img >
-            <img  src="~assets/img/tabbar/home.png" alt="">
+            <img  src="../../../assets/img/tabbar/home.png" alt="">
           </template>
           <template v-slot:imgActive>
             <img  src="~assets/img/tabbar/home_active.png" alt="">

@@ -9,40 +9,36 @@ import shopCart from "../views/shopcart/shopCart";
 
 
 // const baseurl="/dan/public/danmall/dist"
-const baseurl=""
 
 Vue.use(VueRouter)
 const routes = [
   {
-    path: '',
-    redirect: baseurl + '/home'
+    path:  '',
+    redirect:  '/home'
   },
   {
-    path: '/home',
+    path:  '/home',
     component: home
   },
   {
-    path:  baseurl + '/category',
+    path:  '/category',
     component: category
   },
   {
-    path:  baseurl + '/shopcart',
+    path: '/shopcart',
     component: shopCart
   },
   {
-    path: baseurl + '/profile',
+    path:  '/profile',
     component: profile
   },
 ]
 
-//获取原型对象上的push函数
-const originalPush = VueRouter.prototype.push
-//修改原型对象中的push方法
-VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err)
-}
+// console.log(location);
+// console.log(location.href.split("#/home")[0].split(location.host)[1]);
 
 export default new VueRouter({
   routes ,
-  mode:"history"
+  // mode: "history",
+  base:location.href.split("/home")[0].split(location.host)[1]
 })
