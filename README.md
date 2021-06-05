@@ -12,12 +12,14 @@ by vue cli3 + thinkphp6
 [gitee](https://gitee.com/dangc/danmall)
 
 ## 当前效果
-
+<br/>
 <div align=center>
-  <img src="public/image/home1.jpg" width="432" height="936" />
+  <!-- <img src="public/image/home1.jpg" width="432" height="936" /> -->
+  <img src="https://gitee.com/dangc/danmall/raw/master/public/image/home1.jpg" width="432" height="936" />
 </div>
 <div align=center>
-  <img src="public/image/home2.jpg" width="432" height="936" />
+  <!-- <img src="public/image/home2.jpg" width="432" height="936" /> -->
+  <img src="https://gitee.com/dangc/danmall/raw/master/public/image/home2.jpg" width="432" height="936" />
 </div> 
 
 
