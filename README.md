@@ -5,6 +5,8 @@ vuejs for a danmall which like as jd.mall
 
 by vue cli3 + thinkphp6
 
+
+
 ## 当前效果
 
 ![image](public/image/home1.jpg)
