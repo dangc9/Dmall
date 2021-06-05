@@ -7,10 +7,11 @@ by vue cli3 + thinkphp6
 
 ## 链接
 [github](https://github.com/dangc9/danmall)
+<br/>
+<br/>
 [gitee](https://gitee.com/dangc/danmall)
 
 ## 当前效果
-
 
 <div align=center>
   <img src="public/image/home1.jpg" width="432" height="936" />
@@ -18,10 +19,6 @@ by vue cli3 + thinkphp6
 <div align=center>
   <img src="public/image/home2.jpg" width="432" height="936" />
 </div> 
-
-
-
-
 
 
 ## Project setup
