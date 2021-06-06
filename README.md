@@ -1,7 +1,7 @@
-# danmall
+# Dmall
 
 ## Anounce
-vuejs for a danmall which like as jd.mall
+vuejs for a Dmall which like as jd.mall
 
 by vue cli3 + thinkphp6
 
