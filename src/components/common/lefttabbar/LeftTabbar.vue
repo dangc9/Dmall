@@ -33,9 +33,6 @@ export default {
   created () {
     // console.log(this.category);
   },
-  computed: {
-
-  },
   methods: {
     barclick(index){
       this.currentIndex = index;
