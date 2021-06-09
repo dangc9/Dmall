@@ -18,7 +18,7 @@
                         lastTab  : index == category.length-1
                 }"
                 @click="barclick(index)">
-                <!-- 模仿京东app的分类 在li标签内加一个容器,实现active右上角，右下角圆弧效果 -->
+              <!-- 模仿京东app的分类 在li标签内加一个容器,实现active右上角，右下角圆弧效果 -->
               <div>
                 {{item.name}}
               </div>
@@ -28,7 +28,7 @@
       </scroll>
       <scroll class="right-scroll" :options='rightScrollOptions'>
         <div class="category-branch">
-          <!-- 项目比较大的话，每个分类内容应该有一个独立组件，能个性化设计 -->
+          <!-- 项目比较大的话，每一个分类内容应该有一个独立组件，能个性化设计,这里直接用一个对象category套娃所有分类分支 -->
           <div v-for="(a,b) in activeCategoryList" :key="b" class="category-branch-div">
             <h4>{{a.title}}</h4>
             <div class="category-type-div">
@@ -55,8 +55,8 @@
         currentIndex : 0,     //记录当前活跃tab
         // activeCategoryList : [],  
         leftScrollOptions : {
-          click : true,
-          bounce : false,
+          click : true,     //BetterScroll 默认会阻止浏览器的原生click事件
+          bounce : false,   //超出滑动关闭弹簧效果
         },
         rightScrollOptions : {
           click : true,
@@ -80,7 +80,7 @@
       }
     },
     created () {
-      //回调函数应该在created后异步请求分类数据
+      //实际情况回调函数应该在created后异步请求分类数据初始化this.category
       this.category = [
         {
           name : '热门推荐',
@@ -509,11 +509,11 @@
 }
 .active div {
   background: #fff !important;
-  border-top-left-radius:15px;
-  border-bottom-left-radius:15px
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px
 }
 .firstTab div {
-  border-top-left-radius:0px !important; 
+  border-top-left-radius: 0px !important; 
 }
 .lastTab div {
   border-bottom-left-radius: 0px !important;
