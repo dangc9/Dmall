@@ -5,36 +5,38 @@
         <div>分类查看</div>
       </template>
     </nav-bar>
-    <!-- <left-tabbar :category="category"></left-tabbar> -->
-    <!-- 分类的内容只能放在leftTabbar组件的子组件了 -->
     <div class="category">
-      <div class="left-tabbar">
-        <ul>
-          <li v-for="(item,index) in category"  
-              :key="index" 
-              :class="{active : index === currentIndex,
-                      aboveActive : index === currentIndex-1,
-                      belowActive : index === currentIndex+1,
-                      firstTab : index == 0,
-                      lastTab  : index == category.length-1
-              }"
-              @click="barclick(index)">
-              <!-- 模仿京东app的分类 在li标签内加一个容器,实现active右上角，右下角圆弧效果 -->
-            <div>
-              {{item.name}}
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="category-branch">
-        <!-- 项目比较大的话，每个分类内容应该有一个独立组件，能个性化设计 -->
-        <div v-for="(a,b) in activeCategoryList" :key="b" class="category-branch-div">
-          <h4>{{a.title}}</h4>
-          <div class="category-type-div">
-            <category-item v-for="(c,d) in a.content" class="category-type" :content="c" :key="d"></category-item>
-          </div>
+      <scroll class="left-scroll" :options="leftScrollOptions">
+        <div class="left-tabbar">
+          <ul>
+            <li v-for="(item,index) in category"  
+                :key="index" 
+                :class="{active : index === currentIndex,
+                        aboveActive : index === currentIndex-1,
+                        belowActive : index === currentIndex+1,
+                        firstTab : index == 0,
+                        lastTab  : index == category.length-1
+                }"
+                @click="barclick(index)">
+                <!-- 模仿京东app的分类 在li标签内加一个容器,实现active右上角，右下角圆弧效果 -->
+              <div>
+                {{item.name}}
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
+      </scroll>
+      <scroll class="right-scroll" :options='rightScrollOptions'>
+        <div class="category-branch">
+          <!-- 项目比较大的话，每个分类内容应该有一个独立组件，能个性化设计 -->
+          <div v-for="(a,b) in activeCategoryList" :key="b" class="category-branch-div">
+            <h4>{{a.title}}</h4>
+            <div class="category-type-div">
+              <category-item v-for="(c,d) in a.content" class="category-type" :content="c" :key="d"></category-item>
+            </div>
+          </div>
+        </div> 
+      </scroll> 
     </div>
   </div>
 </template>
@@ -43,6 +45,8 @@
   // import LeftTabbar from "./lefttabbar/LeftTabbar"
   import NavBar from "../../components/common/navbar/NavBar"
   import categoryItem from "../../components/content/goods/CategoryItem";
+
+  import scroll from "components/common/scroll/scroll"
   export default {
     name:"category",
     data(){
@@ -50,6 +54,13 @@
         category: [],         //分类内容，待created初始化
         currentIndex : 0,     //记录当前活跃tab
         // activeCategoryList : [],  
+        leftScrollOptions : {
+          click : true,
+          bounce : false,
+        },
+        rightScrollOptions : {
+          click : true,
+        },
       }
     },
     computed: {
@@ -59,7 +70,8 @@
     },
     components: {
       categoryItem,
-      NavBar
+      NavBar,
+      scroll,
     },
     methods: {
       barclick(index){
@@ -413,7 +425,6 @@
           ]
         },
       ];
-      console.log(this.category.length);
     },
   }
 </script>
@@ -433,8 +444,6 @@
 }
 .category-branch{
   flex: 1;
-  margin-top: 44px;
-  margin-bottom: 39px;
 }
 .category-branch-div{
   padding: 20px 10px 10px 10px;
@@ -453,13 +462,18 @@
   flex: 0 0 33%
 }
 
-
-.left-tabbar{
-  overflow:hidden;
-  /* height: 1000px; */
-  margin-top:44px;
-  
-  position: relative;
+.left-scroll{
+  position: absolute;
+  top: 44px;
+  bottom: 49px;
+  overflow: hidden;
+}
+.right-scroll{
+  position: absolute;
+  top: 44px;
+  bottom: 49px;
+  left: 100px;
+  overflow: hidden;
 }
 .left-tabbar ul{
   width: 100px;
