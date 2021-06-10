@@ -1,8 +1,16 @@
 <template>
   <div>
     <nav-bar class="categroy-nav">
-      <template v-slot:center>
-        <div>分类查看</div>
+      <template v-slot:left>
+        <span class="categroy-header-icon" @click="goBack" title="返回"></span>
+      </template>
+       <template v-slot:center>
+        <div class='catagroy-search-box' @click="goSearch">
+          <i class="catagroy-search-box-icon"></i>
+          <div class='catagroy-search-box-input-div'>
+            <input type="text" placeholder="手机">
+          </div>
+        </div>
       </template>
     </nav-bar>
     <div class="category">
@@ -76,7 +84,12 @@
     methods: {
       barclick(index){
         this.currentIndex = index;  
-        console.log(index);
+      },
+      goBack() {
+
+      },
+      goSearch() {
+
       }
     },
     created () {
@@ -431,16 +444,91 @@
 
 <style scoped>
 .categroy-nav{
-  background-color: #ff8198;
+  background-color: #fff;
   color: #fff;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   z-index: 100;
+  
+}
+.catagroy-search-box{
+  margin: 9px -10px auto -15px;
+  height: 28px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 1em;
+}
+.categroy-header-icon {
+  margin: 12px 0 0 10px;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url('http://192.168.1.100/danmall/view/icon/go-back.png') no-repeat;
+  background-size: 100% 100%;
+}
+.catagroy-header-search-box{
+  margin: 9px -10px auto -15px;
+  height: 28px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 1em;
+}
+.catagroy-search-box-icon{
+  display: block;
+  width: 18px;
+  height: 15px;
+  background: url('http://192.168.1.100/danmall/view/icon/dmall-sprites.png') no-repeat;
+  background-position: -80px 0;
+  background-size: 200px;
+  margin: 8px 0 0 10px;
+  position: relative;
+  z-index: 1;
+  float: left;
+  border-right: 1px  solid ;
+}
+.catagroy-search-box-input-div{
+  display: inline-block;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  overflow: hidden;
+  background: #f7f7f7;
+  font-size: 12px;
+  -webkit-box-align: center;
+  line-height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 30px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.catagroy-search-box input {
+  border: 0;
+  background: 0 0;
+
+  font-size: 12px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  height: auto;
+  margin: 0 0 0 5px;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  line-height: 16px;
+}
+.catagroy-search-box input[type=text]:focus{
+  outline: none;    
+  border: 0px
 }
 .category{
   display: flex;
+ 
 }
 .category-branch{
   flex: 1;
