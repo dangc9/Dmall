@@ -15,16 +15,16 @@ by vue cli3 + thinkphp6
 <br/>
 <div align=center>
   <!-- <img src="public/image/home.jpg" width="432" height="936" /> -->
-  <img src="https://gitee.com/dangc/Dmall/raw/master/public/image/home1.jpg" width="45%"  />
+  <img src="./public/image/home1.jpg" width="45%"  />
 </div>
 <div align=center>
-  <img src="https://gitee.com/dangc/Dmall/raw/master/public/image/home2.jpg" width="45%"  />
+  <img src="./public/image/home2.jpg" width="45%"  />
 </div> 
 <div align=center>
-  <img src="https://gitee.com/dangc/Dmall/raw/master/public/image/category.jpg" width="45%" />
+  <img src="./public/image/category1.jpg" width="45%" />
 </div>
 <div align=center>
-  <img src="https://gitee.com/dangc/Dmall/raw/master/public/image/category2.jpg" width="45%" />
+  <img src="./public/image/category2.jpg" width="45%" />
 </div>
 
 
