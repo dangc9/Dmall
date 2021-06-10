@@ -206,7 +206,6 @@
         },
       ]
     },
-
   }
 </script>
 
@@ -277,8 +276,8 @@
     line-height: 16px;
   }
   .header-search-box input[type=text]:focus{
-      outline: none;    
-      border: 0px
+    outline: none;    
+    border: 0px
   }
   .search-box-icon{
     display: block;
